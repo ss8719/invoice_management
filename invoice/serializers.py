@@ -9,6 +9,8 @@ class InvoiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Invoice
         fields = "__all__"
+
+
 class InvoiceDetailSerializer(serializers.ModelSerializer):
     invoice_number = InvoiceSerializer()
 
