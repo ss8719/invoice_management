@@ -24,6 +24,7 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
 
 
 class BookSerializer(serializers.ModelSerializer):
+    invoice_number=InvoiceSerializer(read_only=False)
     class Meta:
         model = Book
         fields = "__all__"
