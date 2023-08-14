@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from invoice.models import Invoice, InvoiceDetail
-from invoice.serializers import InvoiceSerializer, InvoiceDetailSerializer, BookSerializer
+from invoice.serializers import InvoiceSerializer, InvoiceDetailSerializer,
 
 
 # Create your views here.
