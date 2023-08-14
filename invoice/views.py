@@ -29,7 +29,7 @@ def invoice_details(request):
         serializer = InvoiceDetailSerializer(all_invoice_details, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == "POST":
-        serializer = InvoiceSerializer(data=request.data)
+        serializer = InvoiceDetailSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
