@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from invoice.models import Invoice
-from invoice.serializerss.serializers import InvoiceDetailSerializer
+from invoice.serializerss.invoice_detail_serializer import InvoiceDetailSerializer
 
 
 class InvoiceSerializer(serializers.ModelSerializer):
