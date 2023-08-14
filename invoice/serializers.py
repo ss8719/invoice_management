@@ -23,9 +23,3 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
         return InvoiceDetail.objects.create(**validated_data)
 
 
-class BookSerializer(serializers.ModelSerializer):
-    invoice_number = InvoiceSerializer(read_only=True)
-
-    class Meta:
-        model = Book
-        fields = "__all__"
