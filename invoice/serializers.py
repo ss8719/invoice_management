@@ -22,10 +22,6 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
         data = super(InvoiceDetailSerializer, self).to_representation(instance)
         return data
 
-    def to_internal_value(self, data):
-        data = super(InvoiceDetailSerializer, self).to_internal_value(data)
-        return data
-
 
 class InvoiceDetailSerializerForGet(InvoiceDetailSerializer):
     invoice_number = InvoiceSerializer(read_only=True)
