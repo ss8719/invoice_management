@@ -31,6 +31,6 @@ def invoice_details(request):
     elif request.method == "POST":
         serializer = InvoiceDetailSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(invoice_number=Invoice.objects.get(invoice_number=request.data["invoice_number"]))
+            serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
