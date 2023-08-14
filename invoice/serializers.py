@@ -28,4 +28,4 @@ class InvoiceDetailSerializerForGet(InvoiceDetailSerializer):
 
 
 class InvoiceSerializerWithInvoiceDetailSerializer(InvoiceSerializer):
-    invoice_details = InvoiceDetailSerializer(read_only=True)
+    invoice_detail = InvoiceDetailSerializer(read_only=True)
