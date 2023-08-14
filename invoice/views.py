@@ -1,5 +1,5 @@
-from django.shortcuts import render
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 
 # Create your views here.
@@ -7,6 +7,6 @@ from rest_framework.decorators import api_view
 @api_view(["GET", "POST"])
 def invoice(request):
     if request.method == "GET":
-        return render(request, "invoice.html")
+        return Response("lkdjflakdjf")
     elif request.method == "POST":
-        return render(request, "invoice.html")
+        return Response("lkdjflakdjf")
