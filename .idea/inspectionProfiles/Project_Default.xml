@@ -1,0 +1,28 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="myproject.myproject.urls.path" />
+          <option value="myproject.myproject.urls.admin" />
+          <option value="djangoProject.models.models" />
+          <option value="djangoProject.admin.admin" />
+          <option value="djangoProject.serializers.serializers" />
+          <option value="djangoProject.serializers.Students" />
+          <option value="apis2.models.Todo2.objects" />
+          <option value="apis2.models.Todo.objects" />
+          <option value="apis2.models.Todos.objects" />
+          <option value="apis2.models.Todos2.objects" />
+          <option value="apis2.models.todo_model.Todos.objects" />
+          <option value="books.models.Book.objects" />
+          <option value="books.models.Chapter.objects" />
+          <option value="tasks.models.Task.objects" />
+          <option value="tasks.models.TaskList.objects" />
+          <option value="tasks.models.Product.objects" />
+          <option value="rest_framework.authtoken.models.Token.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
