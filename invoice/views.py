@@ -25,7 +25,7 @@ def invoice(request):
 @api_view(["GET", "POST"])
 def invoice_details(request):
     if request.method == "GET":
-        all_invoice_details = InvoiceDetail.objects.all()
+        all_invoice_details = InvoiceDetail.objects.select_related("invoice_number").all()
         serializer = InvoiceDetailSerializer(all_invoice_details, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == "POST":
