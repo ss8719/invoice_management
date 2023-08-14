@@ -27,3 +27,7 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         data = super(InvoiceDetailSerializer, self).to_representation(instance)
         return data
+
+    def to_internal_value(self, data):
+        data = super(InvoiceDetailSerializer, self).to_internal_value(data)
+        return data
