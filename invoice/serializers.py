@@ -19,8 +19,6 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
     def create(self, validated_data):
-        print(validated_data)
-        print("dlakjflkdajflk")
         validated_data["price"] = validated_data["unit_price"] * validated_data["quantity"]
         return InvoiceDetail.objects.create(**validated_data)
 
@@ -29,8 +27,5 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
         return data
 
     def to_internal_value(self, data):
-        print("dlkajflkdjflkajdfakjdflkajdf")
-        print(data)
         data = super(InvoiceDetailSerializer, self).to_internal_value(data)
-        print(data)
         return data
