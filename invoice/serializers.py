@@ -13,3 +13,9 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = InvoiceDetail
         fields = "__all__"
+
+    def create(self, validated_data):
+        print("sameer singh")
+        print(validated_data)
+        validated_data["price"] = self.context["unit_price"] * self.context["quantity"]
+        return InvoiceDetail.objects.create(**validated_data)
