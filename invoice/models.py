@@ -22,4 +22,4 @@ class InvoiceDetail(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=100)
-    invoice_number = models.OneToOneField(Invoice, on_delete=models.CASCADE, related_name="book_invoice_detail",
+    invoice_number = models.OneToOneField(Invoice, on_delete=models.CASCADE, related_name="book_invoice_detail",)
