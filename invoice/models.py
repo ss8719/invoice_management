@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 class Invoice(models.Model):
     invoice_number = models.AutoField(primary_key=True)
-    date = models.DateField(auto_now_add=True)
+    date = models.DateTimeField(auto_now_add=True)
     customer_name = models.CharField(max_length=100)
 
     def __str__(self):
