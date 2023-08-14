@@ -24,5 +24,6 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         data = super(InvoiceDetailSerializer, self).to_representation(instance)
+        data["invoice_number"]=InvoiceSerializer(Invoice.objects.get(invoice_number=data["invoice_number"])).data
         # data["invoice_number"] = instance.invoice_number.invoice_number
         return data
