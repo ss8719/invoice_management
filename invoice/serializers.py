@@ -29,5 +29,8 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
         return data
 
     def to_internal_value(self, data):
+        print("dlkajflkdjflkajdfakjdflkajdf")
+        print(data)
         data = super(InvoiceDetailSerializer, self).to_internal_value(data)
+        print(data)
         return data
