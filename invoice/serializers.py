@@ -12,7 +12,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
 
 
 class InvoiceDetailSerializer(serializers.ModelSerializer):
-    invoice_number = InvoiceSerializer()
+    # invoice_number = InvoiceSerializer()
 
     class Meta:
         model = InvoiceDetail
@@ -21,3 +21,8 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data["price"] = validated_data["unit_price"] * validated_data["quantity"]
         return InvoiceDetail.objects.create(**validated_data)
+
+    def to_representation(self, instance):
+        data = super(InvoiceDetailSerializer, self).to_representation(instance)
+        # data["invoice_number"] = instance.invoice_number.invoice_number
+        return data
