@@ -12,7 +12,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
 
 
 class InvoiceDetailSerializer(serializers.ModelSerializer):
-    # invoice_number = InvoiceSerializer(read_only=True)
+    invoice_number = InvoiceSerializer()
 
     class Meta:
         model = InvoiceDetail
