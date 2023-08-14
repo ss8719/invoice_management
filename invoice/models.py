@@ -12,7 +12,7 @@ class Invoice(models.Model):
 
 
 class InvoiceDetail(models.Model):
-    invoice_number = models.OneToOneField(Invoice, on_delete=models.CASCADE, related_name="invoice_detail")
+    invoice_number = models.OneToOneField(Invoice, on_delete=models.CASCADE, related_name="invoice_detail", )
     description = models.TextField()
     quantity = models.IntegerField()
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)
