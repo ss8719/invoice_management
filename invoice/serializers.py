@@ -21,3 +21,4 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data["price"] = validated_data["unit_price"] * validated_data["quantity"]
         return InvoiceDetail.objects.create(**validated_data)
+
