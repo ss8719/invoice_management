@@ -22,6 +22,7 @@ def invoice(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) @ api_view(["GET", "POST"])
 
 
+@api_view(["GET", "POST"])
 def invoice_details(request):
     if request.method == "GET":
         all_invoice_details = InvoiceDetail.objects.all()
