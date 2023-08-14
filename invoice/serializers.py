@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
-from invoice.models import Invoice, InvoiceDetail
+from invoice.models import InvoiceDetail
+from invoice.serializerss.invoice_serializer import InvoiceSerializer
 
 
 class InvoiceDetailSerializer(serializers.ModelSerializer):
@@ -13,6 +14,3 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data["price"] = validated_data["unit_price"] * validated_data["quantity"]
         return InvoiceDetail.objects.create(**validated_data)
-
-
-
