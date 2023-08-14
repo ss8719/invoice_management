@@ -20,12 +20,12 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users_api.urls')),  #
-    path('tasks/', include('tasks.urls')),  #
-    path('todos/', include('todos.urls')),  #
-    path('car/', include('car.urls')),  #
-    path('book/', include('book.urls')),  #
-    path('a1/', include('a1.urls')),  #
-    path('a2/', include('a2.urls')),  #
+    # path('tasks/', include('tasks.urls')),  #
+    # path('todos/', include('todos.urls')),  #
+    # path('car/', include('car.urls')),  #
+    # path('book/', include('book.urls')),  #
+    # path('a1/', include('a1.urls')),  #
+    # path('a2/', include('a2.urls')),  #
     path("__debug__/", include("debug_toolbar.urls")),
 
     # path('management_todos/', include('management_todos.urls')),  #
