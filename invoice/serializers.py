@@ -4,8 +4,6 @@ from invoice.models import Invoice, InvoiceDetail
 
 
 class InvoiceSerializer(serializers.ModelSerializer):
-    # invoice_detail = InvoiceDetailSerializer(read_only=True)
-
     class Meta:
         model = Invoice
         fields = "__all__"
