@@ -11,7 +11,7 @@ from invoice.serializers import InvoiceSerializer, InvoiceDetailSerializer
 @api_view(["GET", "POST"])
 def invoice(request):
     if request.method == "GET":
-        all_invoices = Invoice.objects.all()
+        all_invoices = Invoice.objects.prefetch_related("invoice_detail").all()
         serializer = InvoiceSerializer(all_invoices, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == "POST":
