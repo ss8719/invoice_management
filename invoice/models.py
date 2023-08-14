@@ -18,8 +18,3 @@ class InvoiceDetail(models.Model):
     quantity = models.IntegerField()
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)
     price = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
-
-
-class Book(models.Model):
-    title = models.CharField(max_length=100)
-    invoice_number = models.OneToOneField(Invoice, on_delete=models.CASCADE, related_name="book_invoice_detail",)
