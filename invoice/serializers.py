@@ -25,3 +25,7 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
 
 class InvoiceDetailSerializerForGet(InvoiceDetailSerializer):
     invoice_number = InvoiceSerializer(read_only=True)
+
+
+class InvoiceSerializerWithInvoiceDetailSerializer(InvoiceSerializer):
+    invoice_details = InvoiceDetailSerializer(read_only=True)
