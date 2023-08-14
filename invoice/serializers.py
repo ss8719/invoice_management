@@ -12,7 +12,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
 
 
 class InvoiceDetailSerializer(serializers.ModelSerializer):
-    # invoice_number = InvoiceSerializer()
+    invoice_number = InvoiceSerializer()
 
     class Meta:
         model = InvoiceDetail
@@ -21,5 +21,3 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data["price"] = validated_data["unit_price"] * validated_data["quantity"]
         return InvoiceDetail.objects.create(**validated_data)
-
-
