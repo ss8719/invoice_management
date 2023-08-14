@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from invoice.models import Invoice, InvoiceDetail
-from invoice.serializers import InvoiceSerializer, InvoiceDetailSerializer
+from invoice.serializers import InvoiceSerializer, InvoiceDetailSerializer, InvoiceDetailSerializerForGet
 
 
 # Create your views here.
@@ -26,7 +26,7 @@ def invoice(request):
 def invoice_details(request):
     if request.method == "GET":
         all_invoice_details = InvoiceDetail.objects.select_related("invoice_number").all()
-        serializer = InvoiceDetailSerializer(all_invoice_details, many=True)
+        serializer = InvoiceDetailSerializerForGet(all_invoice_details, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == "POST":
         serializer = InvoiceDetailSerializer(data=request.data)
