@@ -12,8 +12,6 @@ class InvoiceSerializer(serializers.ModelSerializer):
 
 
 class InvoiceDetailSerializer(serializers.ModelSerializer):
-    invoice_number = InvoiceSerializer(read_only=True)
-
     class Meta:
         model = InvoiceDetail
         fields = "__all__"
@@ -29,3 +27,7 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
     def to_internal_value(self, data):
         data = super(InvoiceDetailSerializer, self).to_internal_value(data)
         return data
+
+
+class InvoiceDetailSerializerForGet(InvoiceDetailSerializer):
+    invoice_number = InvoiceSerializer(read_only=True)
